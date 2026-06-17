@@ -17,7 +17,11 @@ const UserSchema = new mongoose.Schema({
         twitter: { type: String, default: '' },
         instagram: { type: String, default: '' }
     },
-    favorites: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Property' }]
+    favorites: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Property' }],
+    viewedProperties: [{
+        property: { type: mongoose.Schema.Types.ObjectId, ref: 'Property' },
+        viewedAt: { type: Date, default: Date.now }
+    }]
 }, { timestamps: true });
 
 module.exports = mongoose.model('User', UserSchema);

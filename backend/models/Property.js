@@ -11,7 +11,12 @@ const PropertySchema = new mongoose.Schema({
     description: { type: String },
     images: [{ type: String }],
     owner: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
-    status: { type: String, enum: ['Pending', 'Approved', 'Rejected'], default: 'Pending' }
+    status: { type: String, enum: ['Pending', 'Approved', 'Rejected'], default: 'Pending' },
+    views: { type: Number, default: 0 },
+    coordinates: {
+        lat: { type: Number, default: 22.7196 },
+        lng: { type: Number, default: 75.8577 }
+    }
 }, { timestamps: true });
 
 module.exports = mongoose.model('Property', PropertySchema);

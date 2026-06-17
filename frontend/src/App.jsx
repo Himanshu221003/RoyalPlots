@@ -19,6 +19,7 @@ import Agents from './pages/Agents'
 import AgentProfile from './pages/AgentProfile'
 import Contact from './pages/Contact'
 import Comparison from './pages/Comparison'
+import PredictPrice from './pages/PredictPrice'
 import Chatbot from './components/Chatbot'
 
 import { GoogleOAuthProvider } from '@react-oauth/google'
@@ -38,6 +39,7 @@ export default function App() {
                   <Route path="/" element={<SplashScreen />} />
                   <Route path="/login" element={<LoginSignup />} />
                   <Route path="/about" element={<About />} />
+                  <Route path="/predict-price" element={<PredictPrice />} />
                   <Route path="/agents" element={<Agents />} />
                   <Route path="/agent/:id" element={<AgentProfile />} />
                   <Route path="/contact" element={<Contact />} />

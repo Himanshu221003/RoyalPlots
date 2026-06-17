@@ -2,8 +2,10 @@ import { useState, useEffect } from 'react';
 import { useNavigate, Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { useTheme } from '../context/ThemeContext';
+import { useSocket } from '../context/SocketContext';
+import API_URL from '../config/api';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sun, Moon, Menu, X, Shield, LayoutDashboard, LogOut, Building2, Users2, Info, Mail, Home, ChevronRight, User } from 'lucide-react';
+import { Sun, Moon, Menu, X, Shield, LayoutDashboard, LogOut, Building2, Users2, Info, Mail, Home, ChevronRight, User, Bell, TrendingUp } from 'lucide-react';
 
 export default function Navbar() {
     const navigate = useNavigate();
@@ -12,6 +14,9 @@ export default function Navbar() {
     const { darkMode, toggleDarkMode } = useTheme();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const [notifications, setNotifications] = useState([]);
+    const [isNotifOpen, setIsNotifOpen] = useState(false);
+    const socket = useSocket();
 
     useEffect(() => {
         const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -21,10 +26,59 @@ export default function Navbar() {
 
     useEffect(() => { setIsMenuOpen(false); }, [location.pathname]);
 
+    useEffect(() => {
+        if (!token) return;
+
+        const fetchNotifications = async () => {
+            try {
+                const res = await fetch(`${API_URL}/api/notifications`, {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                const data = await res.json();
+                if (data.success) {
+                    setNotifications(data.notifications);
+                }
+            } catch (err) {
+                console.error("Error fetching notifications:", err);
+            }
+        };
+
+        fetchNotifications();
+
+        if (socket) {
+            if (user?._id) {
+                socket.emit('join', user._id);
+            }
+
+            const handleNewProperty = (notif) => {
+                setNotifications(prev => [notif, ...prev]);
+            };
+
+            const handlePriceDrop = (notif) => {
+                setNotifications(prev => [notif, ...prev]);
+            };
+
+            const handleInquiry = (notif) => {
+                setNotifications(prev => [notif, ...prev]);
+            };
+
+            socket.on('new_property', handleNewProperty);
+            socket.on('price_drop', handlePriceDrop);
+            socket.on('inquiry', handleInquiry);
+
+            return () => {
+                socket.off('new_property', handleNewProperty);
+                socket.off('price_drop', handlePriceDrop);
+                socket.off('inquiry', handleInquiry);
+            };
+        }
+    }, [token, socket, user?._id]);
+
     // Re-mapping icons for lucide
     const navItems = [
         { name: 'Home', path: '/home', icon: <Home className="w-5 h-5" /> },
         { name: 'Properties', path: '/properties', icon: <Building2 className="w-5 h-5" /> },
+        { name: 'Predict Valuation', path: '/predict-price', icon: <TrendingUp className="w-5 h-5" /> },
         { name: 'Agents', path: '/agents', icon: <Users2 className="w-5 h-5" /> },
         { name: 'About', path: '/about', icon: <Info className="w-5 h-5" /> },
         { name: 'Contact', path: '/contact', icon: <Mail className="w-5 h-5" /> },
@@ -89,6 +143,93 @@ export default function Navbar() {
                         >
                             {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
                         </motion.button>
+
+                        {/* Notification Bell */}
+                        {token && (
+                            <div className="relative">
+                                <motion.button
+                                    whileHover={{ scale: 1.1 }}
+                                    whileTap={{ scale: 0.9 }}
+                                    onClick={() => {
+                                        setIsNotifOpen(!isNotifOpen);
+                                        setIsMenuOpen(false);
+                                    }}
+                                    className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-2xl bg-surface dark:bg-dark-surface border border-surface-variant dark:border-dark-surface-variant text-primary dark:text-dark-primary shadow-sm relative"
+                                >
+                                    <Bell className="w-5 h-5" />
+                                    {notifications.filter(n => !n.read).length > 0 && (
+                                        <span className="absolute top-2.5 right-2.5 w-3 h-3 bg-red-500 rounded-full border-2 border-white dark:border-dark-surface animate-pulse" />
+                                    )}
+                                </motion.button>
+
+                                <AnimatePresence>
+                                    {isNotifOpen && (
+                                        <>
+                                            <div className="fixed inset-0 z-40" onClick={() => setIsNotifOpen(false)} />
+                                            <motion.div
+                                                initial={{ opacity: 0, y: 15, scale: 0.95 }}
+                                                animate={{ opacity: 1, y: 0, scale: 1 }}
+                                                exit={{ opacity: 0, y: 15, scale: 0.95 }}
+                                                className="absolute right-0 mt-3 w-80 sm:w-96 bg-white dark:bg-dark-surface border border-surface-variant dark:border-dark-surface-variant rounded-[2rem] shadow-2xl z-50 overflow-hidden py-4"
+                                            >
+                                                <div className="px-6 pb-3 border-b border-surface-variant/40 dark:border-dark-surface-variant/40 flex justify-between items-center">
+                                                    <h4 className="font-black text-sm text-primary dark:text-dark-on-surface uppercase tracking-widest">Notifications</h4>
+                                                    {notifications.filter(n => !n.read).length > 0 && (
+                                                        <button 
+                                                            onClick={async () => {
+                                                                const unread = notifications.filter(n => !n.read);
+                                                                for (const notif of unread) {
+                                                                    await fetch(`${API_URL}/api/notifications/${notif._id}/read`, {
+                                                                        method: 'PUT',
+                                                                        headers: { 'Authorization': `Bearer ${token}` }
+                                                                    });
+                                                                }
+                                                                setNotifications(prev => prev.map(n => ({ ...n, read: true })));
+                                                            }}
+                                                            className="text-[9px] font-black uppercase tracking-wider text-accent hover:underline"
+                                                        >
+                                                            Mark all read
+                                                        </button>
+                                                    )}
+                                                </div>
+
+                                                <div className="max-h-[300px] overflow-y-auto divide-y divide-surface-variant/20 dark:divide-dark-surface-variant/20">
+                                                    {notifications.length === 0 ? (
+                                                        <div className="px-6 py-8 text-center text-xs font-bold text-on-surface-variant/40 dark:text-dark-on-surface-variant/40 uppercase tracking-widest">
+                                                            No notifications yet
+                                                        </div>
+                                                    ) : (
+                                                        notifications.map((notif) => (
+                                                            <div 
+                                                                key={notif._id || Math.random()} 
+                                                                onClick={async () => {
+                                                                    if (!notif.read) {
+                                                                        await fetch(`${API_URL}/api/notifications/${notif._id}/read`, {
+                                                                            method: 'PUT',
+                                                                            headers: { 'Authorization': `Bearer ${token}` }
+                                                                        });
+                                                                        setNotifications(prev => prev.map(n => n._id === notif._id ? { ...n, read: true } : n));
+                                                                    }
+                                                                    setIsNotifOpen(false);
+                                                                    if (notif.propertyId) {
+                                                                        navigate(`/property/${notif.propertyId}`);
+                                                                    }
+                                                                }}
+                                                                className={`px-6 py-4 cursor-pointer hover:bg-primary/5 dark:hover:bg-dark-primary/5 transition-colors flex flex-col gap-1 ${!notif.read ? 'bg-primary/5 dark:bg-dark-primary/5 border-l-4 border-accent' : ''}`}
+                                                            >
+                                                                <span className="text-xs font-black text-primary dark:text-white uppercase tracking-wider">{notif.title}</span>
+                                                                <span className="text-[11px] font-bold text-on-surface-variant/70 dark:text-dark-on-surface-variant/70 leading-normal">{notif.message}</span>
+                                                                <span className="text-[9px] font-medium text-on-surface-variant/40 dark:text-dark-on-surface-variant/40 mt-1">{new Date(notif.createdAt || Date.now()).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
+                                                            </div>
+                                                        ))
+                                                    )}
+                                                </div>
+                                            </motion.div>
+                                        </>
+                                    )}
+                                </AnimatePresence>
+                            </div>
+                        )}
 
                         {token ? (
                             <div className="flex items-center gap-3">
