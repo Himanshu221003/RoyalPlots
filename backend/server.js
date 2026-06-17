@@ -81,7 +81,7 @@ app.use('/api/analytics', analyticsRoutes);
 // Serve frontend in production
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '../frontend/dist')));
-    app.get('(.*)', (req, res) => {
+    app.get(/.*/, (req, res) => {
         const indexPath = path.resolve(__dirname, '../', 'frontend', 'dist', 'index.html');
         if (require('fs').existsSync(indexPath)) {
             res.sendFile(indexPath);
