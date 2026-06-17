@@ -9,7 +9,14 @@ if (process.env.REDIS_URL || process.env.NODE_ENV === 'production') {
     try {
         redisClient = new Redis(REDIS_URL, {
             maxRetriesPerRequest: 1,
-            showFriendlyErrorStack: true
+            showFriendlyErrorStack: true,
+            retryStrategy(times) {
+                if (times > 3) {
+                    console.log('⚠️ Redis: Connection retries exhausted. Fallback cache deactivated.');
+                    return null; // Stop retrying
+                }
+                return Math.min(times * 1000, 3000); // Wait 1s, 2s, 3s
+            }
         });
 
         redisClient.on('connect', () => {
