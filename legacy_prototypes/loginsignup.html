@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Login - OPMS Online Property Management System</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#002452",
+                        "secondary": "#006a63",
+                        "tertiary": "#372000",
+                        "background": "#faf9fe",
+                        "surface": "#ffffff",
+                        "on-surface": "#1a1b1f",
+                        "outline": "#747780"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-brand-gradient {
+            background: linear-gradient(135deg, #1B3A6B 0%, #0F766E 100%);
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-surface overflow-hidden">
+    <main class="relative h-screen w-full flex flex-col items-center justify-center p-8 md:max-w-[430px] md:mx-auto md:shadow-2xl md:bg-white md:rounded-[3rem]">
+        
+        <!-- Logo Header -->
+        <div class="flex flex-col items-center mb-10">
+            <div class="w-20 h-20 bg-primary-container/10 rounded-2xl flex items-center justify-center mb-4">
+                <span class="material-symbols-outlined text-primary text-4xl">domain</span>
+            </div>
+            <h1 class="font-headline font-extrabold text-3xl text-primary tracking-tight">Welcome Back</h1>
+            <p class="text-on-surface-variant text-sm mt-1">Digital access to MP real estate</p>
+        </div>
+
+        <!-- Forms Container -->
+        <div class="w-full space-y-6" id="forms-container">
+            <!-- Login View -->
+            <div id="login-view" class="space-y-6">
+                <div class="space-y-4">
+                    <div class="relative">
+                        <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-lg">person</span>
+                        <input id="login-username" type="text" placeholder="Username or Email" class="w-full pl-12 pr-4 py-4 bg-surface-container-low border-none rounded-2xl focus:ring-2 focus:ring-primary/20 font-medium text-sm transition-all" />
+                    </div>
+                    <div class="relative">
+                        <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-lg">lock</span>
+                        <input id="login-password" type="password" placeholder="Password" class="w-full pl-12 pr-4 py-4 bg-surface-container-low border-none rounded-2xl focus:ring-2 focus:ring-primary/20 font-medium text-sm transition-all" />
+                        <button class="absolute right-4 top-1/2 -translate-y-1/2 text-outline" onclick="const p = document.getElementById('login-password'); p.type = p.type === 'password' ? 'text' : 'password';">
+                            <span class="material-symbols-outlined text-lg">visibility</span>
+                        </button>
+                    </div>
+                    <div class="flex justify-end px-2">
+                        <a href="#" class="text-xs font-bold text-secondary tracking-wide uppercase">Forgot Password?</a>
+                    </div>
+                </div>
+
+                <p id="login-error" class="text-error text-xs hidden"></p>
+                <button id="login-btn" onclick="handleLogin()" class="w-full py-5 bg-primary text-white rounded-2xl font-bold shadow-lg shadow-primary/25 active:scale-95 transition-all flex justify-center items-center">
+                    Login Now
+                </button>
+            </div>
+
+            <!-- Signup View (Hidden initially) -->
+            <div id="signup-view" class="space-y-6 hidden">
+                <div class="space-y-4">
+                    <div class="relative">
+                        <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-lg">person</span>
+                        <input id="signup-fullname" type="text" placeholder="Full Name" class="w-full pl-12 pr-4 py-4 bg-surface-container-low border-none rounded-2xl focus:ring-2 focus:ring-primary/20 font-medium text-sm transition-all" />
+                    </div>
+                    <div class="relative">
+                        <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-lg">mail</span>
+                        <input id="signup-email" type="email" placeholder="Email Address" class="w-full pl-12 pr-4 py-4 bg-surface-container-low border-none rounded-2xl focus:ring-2 focus:ring-primary/20 font-medium text-sm transition-all" />
+                    </div>
+                    <div class="relative">
+                        <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-lg">phone_iphone</span>
+                        <input id="signup-tel" type="tel" placeholder="Phone Number" class="w-full pl-12 pr-4 py-4 bg-surface-container-low border-none rounded-2xl focus:ring-2 focus:ring-primary/20 font-medium text-sm transition-all" />
+                    </div>
+                    <div class="relative">
+                        <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-lg">lock</span>
+                        <input id="signup-password" type="password" placeholder="Create Password" class="w-full pl-12 pr-4 py-4 bg-surface-container-low border-none rounded-2xl focus:ring-2 focus:ring-primary/20 font-medium text-sm transition-all" />
+                    </div>
+                </div>
+
+                <p id="signup-error" class="text-error text-xs hidden"></p>
+                <button id="signup-btn" onclick="handleSignup()" class="w-full py-5 bg-secondary text-white rounded-2xl font-bold shadow-lg shadow-secondary/25 active:scale-95 transition-all flex justify-center items-center">
+                    Create Account
+                </button>
+            </div>
+        </div>
+
+        <!-- View Switcher -->
+        <div class="mt-10 text-center">
+            <p id="view-toggle-text" class="text-sm font-medium text-on-surface-variant">Don't have an account?</p>
+            <button id="view-toggle-btn" onclick="toggleViews()" class="mt-2 text-primary font-bold uppercase tracking-widest text-xs border-b-2 border-primary pb-0.5">Register Now</button>
+        </div>
+
+        <!-- Social Auth -->
+        <div class="mt-12 w-full">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="h-px flex-1 bg-outline/20"></div>
+                <span class="text-[10px] font-bold text-outline uppercase tracking-widest">Or continue with</span>
+                <div class="h-px flex-1 bg-outline/20"></div>
+            </div>
+            <div class="flex gap-4">
+                <button class="flex-1 py-4 bg-surface-container-low rounded-2xl flex items-center justify-center active:scale-95 transition-all">
+                    <img src="https://www.gstatic.com/images/branding/product/1x/gsa_512dp.png" class="w-5 h-5" alt="Google" />
+                </button>
+                <button class="flex-1 py-4 bg-surface-container-low rounded-2xl flex items-center justify-center active:scale-95 transition-all">
+                    <span class="material-symbols-outlined text-primary">apple</span>
+                </button>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        function toggleViews() {
+            const loginView = document.getElementById('login-view');
+            const signupView = document.getElementById('signup-view');
+            const toggleBtn = document.getElementById('view-toggle-btn');
+            const toggleText = document.getElementById('view-toggle-text');
+            const headerTitle = document.querySelector('h1');
+
+            if (loginView.classList.contains('hidden')) {
+                loginView.classList.remove('hidden');
+                signupView.classList.add('hidden');
+                toggleBtn.innerText = 'Register Now';
+                toggleText.innerText = "Don't have an account?";
+                headerTitle.innerText = 'Welcome Back';
+            } else {
+                loginView.classList.add('hidden');
+                signupView.classList.remove('hidden');
+                toggleBtn.innerText = 'Login Instead';
+                toggleText.innerText = "Already have an account?";
+                headerTitle.innerText = 'Join OPMS';
+            }
+        }
+
+        async function handleLogin() {
+            const email = document.getElementById('login-username').value;
+            const password = document.getElementById('login-password').value;
+            const errorEl = document.getElementById('login-error');
+            const btn = document.getElementById('login-btn');
+
+            if (!email || !password) {
+                errorEl.innerText = "Please enter username/email and password.";
+                errorEl.classList.remove('hidden');
+                return;
+            }
+
+            btn.innerText = 'Loading...';
+            errorEl.classList.add('hidden');
+
+            try {
+                const res = await fetch('/api/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password })
+                });
+                
+                if (res.ok) {
+                    window.location.href = 'homescreen.html';
+                } else {
+                    const data = await res.json();
+                    errorEl.innerText = data.message || "Login failed";
+                    errorEl.classList.remove('hidden');
+                }
+            } catch (err) {
+                errorEl.innerText = "An error occurred. Please try again.";
+                errorEl.classList.remove('hidden');
+            } finally {
+                btn.innerText = 'Login Now';
+            }
+        }
+
+        async function handleSignup() {
+            const fullName = document.getElementById('signup-fullname').value;
+            const email = document.getElementById('signup-email').value;
+            const phone = document.getElementById('signup-tel').value;
+            const password = document.getElementById('signup-password').value;
+            const errorEl = document.getElementById('signup-error');
+            const btn = document.getElementById('signup-btn');
+
+            if (!fullName || !email || !password) {
+                errorEl.innerText = "Please fill in all required fields.";
+                errorEl.classList.remove('hidden');
+                return;
+            }
+
+            btn.innerText = 'Loading...';
+            errorEl.classList.add('hidden');
+
+            try {
+                const res = await fetch('/api/signup', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ fullName, email, phone, password })
+                });
+                
+                if (res.ok) {
+                    window.location.href = 'homescreen.html';
+                } else {
+                    const data = await res.json();
+                    errorEl.innerText = data.message || "Signup failed";
+                    errorEl.classList.remove('hidden');
+                }
+            } catch (err) {
+                errorEl.innerText = "An error occurred. Please try again.";
+                errorEl.classList.remove('hidden');
+            } finally {
+                btn.innerText = 'Create Account';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My Favorites - The Editorial Estate</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-container": "#e59300",
+              "inverse-surface": "#2f3034",
+              "outline": "#747780",
+              "error-container": "#ffdad6",
+              "on-surface": "#1a1b1f",
+              "primary-fixed-dim": "#acc7ff",
+              "tertiary-container": "#553300",
+              "on-primary-container": "#89a5dd",
+              "surface": "#faf9fe",
+              "surface-container-low": "#f4f3f8",
+              "on-tertiary-fixed-variant": "#653e00",
+              "surface-container-lowest": "#ffffff",
+              "primary-fixed": "#d7e2ff",
+              "on-error": "#ffffff",
+              "tertiary-fixed-dim": "#ffb95f",
+              "on-secondary-fixed-variant": "#00504a",
+              "surface-bright": "#faf9fe",
+              "secondary": "#006a63",
+              "surface-variant": "#e3e2e7",
+              "on-tertiary": "#ffffff",
+              "error": "#ba1a1a",
+              "on-error-container": "#93000a",
+              "secondary-container": "#99efe5",
+              "on-secondary-fixed": "#00201d",
+              "on-tertiary-fixed": "#2a1700",
+              "on-background": "#1a1b1f",
+              "inverse-primary": "#acc7ff",
+              "on-surface-variant": "#44474f",
+              "on-primary-fixed": "#001a40",
+              "outline-variant": "#c4c6d0",
+              "primary": "#002452",
+              "surface-dim": "#dad9de",
+              "on-secondary-container": "#006f67",
+              "surface-container": "#eeedf2",
+              "surface-tint": "#425e91",
+              "on-primary": "#ffffff",
+              "on-secondary": "#ffffff",
+              "surface-container-high": "#e9e7ec",
+              "inverse-on-surface": "#f1f0f5",
+              "on-primary-fixed-variant": "#294678",
+              "primary-container": "#1b3a6b",
+              "tertiary-fixed": "#ffddb8",
+              "background": "#faf9fe"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .editorial-shadow { box-shadow: 0 24px 32px -12px rgba(215, 226, 255, 0.2); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full flex justify-between items-center px-6 py-4 bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl z-50">
+<div class="flex items-center gap-3">
+<a href="userdashboard.html" class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="professional headshot of a smiling male real estate consultant in a sharp navy suit against a clean background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbmoC03Bx7CS-QA2V7X5zoPvbCZ0fc67D3u85CCNahVGZcyBuyMxXQ5wYKoVvK37yB8MFYm9Sggbt3TnqZebCMksAsMBoqa38SeykuH9LTH0OiH4JNOT9L8bTNzBXeEg6p9b-a_lglRTbw21Qm_ZeS5YugZJgkziJKAZuQEOkFll_WRwLJVQ_d5Z0Yi1iCNRv6t0c5znXe9v0RDOwaBJI5pjhAwwJ3_mtnYCaoR4fkoaVr5aUr24hTBN41TNNQzTVG7jFvACnu8w"/>
+</a>
+<h1 class="font-['Manrope'] font-extrabold text-[#002452] dark:text-white tracking-tighter text-lg">The Editorial Estate</h1>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-slate-100/50 transition-transform active:scale-90">
+<span class="material-symbols-outlined text-[#002452] dark:text-[#d7e2ff]">notifications</span>
+</button>
+</header>
+<main class="mt-20 px-6">
+<!-- Title & Filter Section -->
+<section class="py-8">
+<div class="flex justify-between items-end mb-6">
+<div>
+<span class="text-secondary font-bold text-sm tracking-widest uppercase mb-1 block">Curated Collection</span>
+<h2 class="font-headline font-extrabold text-3xl text-primary tracking-tight">My Favorites</h2>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-high px-4 py-2 rounded-full">
+<span class="material-symbols-outlined text-sm text-on-surface-variant">sort</span>
+<select class="bg-transparent border-none text-xs font-bold font-label text-on-surface-variant focus:ring-0 p-0 pr-6">
+<option>Recently Added</option>
+<option>Price: Low to High</option>
+<option>Price: High to Low</option>
+</select>
+</div>
+</div>
+<!-- Property Grid (Asymmetric Editorial Style) -->
+<div class="grid grid-cols-1 gap-10">
+<!-- Card 1 -->
+<a href="propertyprofile.html" class="relative group block">
+<div class="aspect-[16/10] rounded-xl overflow-hidden editorial-shadow bg-surface-container-low">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="ultra-modern luxury villa in Bhopal with clean lines, large glass windows, and a minimalist infinity pool during twilight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9M7l3UYpAwSmotoA82Ve9GnJgU9kzHnADeR5q_aRwoyd2TsJ8fCyu70kzMSBgcbS74eL0MssgGGJLtJ6Z7xyke8gQtD5Xm29yvpUyJjPL4zu-RCza8nv_y7C8g2Y80MBrNFGGOTr9qZTJXXcJnwLS8X--xoLq32vJzzlxYjudg56vA3jHC0TtdOZYRK3UkXs3hj3lN45CNEfsdKtQ84UmJNL9J99kURRU8OTVZpYPYuQFNoE_2fN-S7FwtYLiSFZ-EFTi2cyFew"/>
+</div>
+<!-- Overlapping Info Block -->
+<div class="absolute -bottom-4 right-4 left-4 bg-surface-container-lowest p-5 rounded-xl editorial-shadow border border-outline-variant/10">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline font-bold text-xl text-primary leading-tight">The Glass Pavilion</h3>
+<p class="text-on-surface-variant text-sm flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                                    Arera Colony, Bhopal
+                                </p>
+</div>
+<button class="w-10 h-10 rounded-full bg-error-container/20 flex items-center justify-center transition-all active:scale-90">
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</div>
+<div class="mt-4 flex justify-between items-center">
+<span class="font-headline font-bold text-lg text-secondary">₹4.25 Crore</span>
+<div class="flex gap-3 text-on-surface-variant text-xs font-semibold">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">bed</span> 4</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">bathtub</span> 5</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">square_foot</span> 4200</span>
+</div>
+</div>
+</div>
+</a>
+<!-- Card 2 -->
+<div class="relative group mt-6">
+<div class="aspect-[16/10] rounded-xl overflow-hidden editorial-shadow bg-surface-container-low">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="contemporary penthouse interior in Indore with warm wooden textures, high ceilings, and panoramic city views through floor-to-ceiling windows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAG6z8Z-1AlXTBZgDpFWuBWOTCdYXBUw872OwlZEhoJWhb1ckyzSYdp-fctuFPWgy6uTXjwynUJ4BtjjT3hpvBrKKFMqUWt-AJdQCpROnMbf4reVP2uS3BLUuYP-GYfsKjQIDfGow9du9HVeP55TUfgRHqruDUrOOUY4o023PjX5O6IIa59MTMWpejzZBR7huKhHiwzKYj3vzhsI631Gb2OayKSdX1rcoQECajKyfRkWSE3kY9K2LKmAdMy7-u-D5dRl_fPlutnMA"/>
+</div>
+<div class="absolute -bottom-4 right-4 left-4 bg-surface-container-lowest p-5 rounded-xl editorial-shadow border border-outline-variant/10">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline font-bold text-xl text-primary leading-tight">Skyline Heights</h3>
+<p class="text-on-surface-variant text-sm flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                                    Vijay Nagar, Indore
+                                </p>
+</div>
+<button class="w-10 h-10 rounded-full bg-error-container/20 flex items-center justify-center transition-all active:scale-90">
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</div>
+<div class="mt-4 flex justify-between items-center">
+<span class="font-headline font-bold text-lg text-secondary">₹1.85 Crore</span>
+<div class="flex gap-3 text-on-surface-variant text-xs font-semibold">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">bed</span> 3</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">bathtub</span> 3</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">square_foot</span> 2100</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="relative group mt-6">
+<div class="aspect-[16/10] rounded-xl overflow-hidden editorial-shadow bg-surface-container-low">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="serene suburban retreat home with a manicured lawn and stone facade under a soft morning sun in Jabalpur" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXyZiiQPhjYPsNLYP_F9z9bVKUBNne4G3Ry42FVb8XCk38Qqt5KEHAczfGZy7P0oSc73i5kS8Eec4hSkz-pBdE_PUgt52UrWFxYdH2xfOznGuUS0yi63a1ZerFCCOkCv1FpUO_n7q4hjdBurhF9nXXq1d6FALQrCNAbnRxuKLthcQLndq25WBBFPcBmqOpufiJ1fpynsGkQDBgsheYuTzGE_4rIqs5gjzP9BN-cyubYV3j1v_-0QxuON5Heq-ewcz0_o5yt9z51Q"/>
+</div>
+<div class="absolute -bottom-4 right-4 left-4 bg-surface-container-lowest p-5 rounded-xl editorial-shadow border border-outline-variant/10">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline font-bold text-xl text-primary leading-tight">Oakwood Manor</h3>
+<p class="text-on-surface-variant text-sm flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                                    Civil Lines, Jabalpur
+                                </p>
+</div>
+<button class="w-10 h-10 rounded-full bg-error-container/20 flex items-center justify-center transition-all active:scale-90">
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</div>
+<div class="mt-4 flex justify-between items-center">
+<span class="font-headline font-bold text-lg text-secondary">₹95.00 Lakh</span>
+<div class="flex gap-3 text-on-surface-variant text-xs font-semibold">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">bed</span> 3</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">bathtub</span> 2</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">square_foot</span> 1850</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Empty State (Hidden by default, shown when grid is empty) -->
+<div class="hidden flex-col items-center justify-center py-24 text-center">
+<div class="w-24 h-24 bg-surface-container rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-5xl text-outline-variant">heart_broken</span>
+</div>
+<h3 class="font-headline font-bold text-xl text-primary mb-2">No saved properties yet</h3>
+<p class="text-on-surface-variant max-w-[240px] mb-8">Start exploring the finest estates in Madhya Pradesh and save your top choices here.</p>
+<button class="px-8 py-3 bg-primary text-on-primary rounded-full font-bold shadow-lg shadow-primary/20 active:scale-95 transition-transform">
+                    Start Exploring
+                </button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg rounded-t-3xl shadow-[0_-8px_30px_rgb(0,0,0,0.04)]">
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-[#1B3A6B] transition-all duration-300 ease-out" href="homescreen.html">
+<span class="material-symbols-outlined">home</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-semibold uppercase tracking-widest mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-[#1B3A6B] transition-all duration-300 ease-out" href="property.html">
+<span class="material-symbols-outlined">search</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-semibold uppercase tracking-widest mt-1">Search</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-[#1B3A6B] transition-all duration-300 ease-out" href="addproperty.html">
+<span class="material-symbols-outlined">add_circle</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-semibold uppercase tracking-widest mt-1">Add</span>
+</a>
+<!-- ACTIVE STATE: Saved -->
+<a class="flex flex-col items-center justify-center text-[#006a63] dark:text-[#4db6ac] bg-[#ffddb8]/20 rounded-xl px-3 py-1 scale-110 transition-all duration-300 ease-out" href="favorites.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-semibold uppercase tracking-widest mt-1">Saved</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-[#1B3A6B] transition-all duration-300 ease-out" href="admin.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-semibold uppercase tracking-widest mt-1">Admin</span>
+</a>
+</nav>
+</body></html>

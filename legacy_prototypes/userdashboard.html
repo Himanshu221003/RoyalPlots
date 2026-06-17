@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>OPMS - User Dashboard</title>
+<!-- Material Symbols Link -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-container": "#e59300",
+              "inverse-surface": "#2f3034",
+              "outline": "#747780",
+              "error-container": "#ffdad6",
+              "on-surface": "#1a1b1f",
+              "primary-fixed-dim": "#acc7ff",
+              "tertiary-container": "#553300",
+              "on-primary-container": "#89a5dd",
+              "surface": "#faf9fe",
+              "surface-container-low": "#f4f3f8",
+              "on-tertiary-fixed-variant": "#653e00",
+              "surface-container-lowest": "#ffffff",
+              "primary-fixed": "#d7e2ff",
+              "on-error": "#ffffff",
+              "tertiary-fixed-dim": "#ffb95f",
+              "on-secondary-fixed-variant": "#00504a",
+              "surface-bright": "#faf9fe",
+              "secondary": "#006a63",
+              "surface-container-highest": "#e3e2e7",
+              "secondary-fixed-dim": "#80d5cb",
+              "secondary-fixed": "#9cf2e8",
+              "tertiary": "#372000",
+              "surface-variant": "#e3e2e7",
+              "on-tertiary": "#ffffff",
+              "error": "#ba1a1a",
+              "on-error-container": "#93000a",
+              "secondary-container": "#99efe5",
+              "on-secondary-fixed": "#00201d",
+              "on-tertiary-fixed": "#2a1700",
+              "on-background": "#1a1b1f",
+              "inverse-primary": "#acc7ff",
+              "on-surface-variant": "#44474f",
+              "on-primary-fixed": "#001a40",
+              "outline-variant": "#c4c6d0",
+              "primary": "#002452",
+              "surface-dim": "#dad9de",
+              "on-secondary-container": "#006f67",
+              "surface-container": "#eeedf2",
+              "surface-tint": "#425e91",
+              "on-primary": "#ffffff",
+              "on-secondary": "#ffffff",
+              "surface-container-high": "#e9e7ec",
+              "inverse-on-surface": "#f1f0f5",
+              "on-primary-fixed-variant": "#294678",
+              "primary-container": "#1b3a6b",
+              "tertiary-fixed": "#ffddb8",
+              "background": "#faf9fe"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #faf9fe;
+            color: #1a1b1f;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full flex justify-between items-center px-6 py-4 bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl docked full-width z-50 no-border bg-surface-container-low shadow-none">
+<h1 class="font-['Manrope'] font-extrabold text-[#002452] dark:text-white tracking-tighter text-lg">The Editorial Estate</h1>
+<div class="flex items-center gap-4">
+<button class="relative p-2 rounded-full hover:bg-slate-100/50 transition-transform active:scale-90">
+<span class="material-symbols-outlined text-[#002452] dark:text-[#d7e2ff]">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<div class="w-10 h-10 rounded-full border-2 border-primary-fixed overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Professional portrait of a middle-aged Indian man with a friendly expression, wearing a crisp white shirt against a neutral studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAt1KzV-SwpFPEliWhtFE0mRvVz6Pb41CN4zg2y0qgiyvM_ugzUpYYYkpM9ECjT9zLK8HC8JwayOyFW86N_M_J1CfSbd-hxEl4GQNvqnFhJVgdsD_vfrVC0OOLVM-Q8ofzJEGQhnNTXkHHHH7GMFQ9rlvMlE9SmOv9qcPShh7vyx3lnlrjowPZMBedD8kDGSuz334xiXBY78rpu8i-TeBCbmU_oCKqhxuQmCZ8NlfPtBBgYtR4dRjub3KIQ_EAf1uHPhOKTedloaw"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-24 pb-32 px-6 max-w-md mx-auto min-h-screen">
+<!-- Profile Header Section -->
+<section class="mb-10 text-center">
+<div class="relative inline-block mb-4">
+<div class="w-24 h-24 rounded-full border-4 border-surface-container-lowest shadow-xl overflow-hidden mx-auto">
+<img class="w-full h-full object-cover" data-alt="Close up of a professional man named Ramesh Sharma with dark hair and a confident smile in soft daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASKMkslic9hqllrXud35axFtc5GPvVuHczf-N-MyXvK1JosAChzbdDr7q7MNL0ko8Awcoa-bOIhS-JCs8aUp-5Dz1JQHzSSpu_XZk5lbkk5Y2CxPdstR8MLEaNrHMMINfzN99mE5TRlFEpXgbcQmPJVHF-zZLNBXJriR_gDMG5-BPVqriF0fU2FtibFmIb9Hoxv3YaBF2J2L9RFQg6dPCzokRpYPOcN4bpOubC2hjxgoJy5u51Y8LTJa3oEIErnU9Cst5LcVBtxQ"/>
+</div>
+<div class="absolute bottom-0 right-0 bg-secondary text-on-secondary px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-lg">
+                    Buyer
+                </div>
+</div>
+<h2 class="font-headline font-bold text-2xl text-primary tracking-tight">Ramesh Sharma</h2>
+<p class="font-body text-sm text-on-surface-variant mt-1">Premium Member since 2023</p>
+</section>
+<!-- Stats Bento Grid -->
+<section class="grid grid-cols-2 gap-4 mb-10">
+<div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/15 flex flex-col items-center justify-center gap-2 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-secondary text-3xl" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<div class="text-center">
+<p class="text-2xl font-headline font-extrabold text-primary leading-none">2</p>
+<p class="text-[11px] font-semibold text-on-surface-variant uppercase tracking-wider mt-1">Saved Properties</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/15 flex flex-col items-center justify-center gap-2 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-on-tertiary-container text-3xl" style="font-variation-settings: 'FILL' 1;">send</span>
+<div class="text-center relative">
+<p class="text-2xl font-headline font-extrabold text-primary leading-none">1</p>
+<p class="text-[11px] font-semibold text-on-surface-variant uppercase tracking-wider mt-1">Sent Inquiry</p>
+<!-- Notification Badge for Inquiry Update -->
+<span class="absolute -top-1 -right-4 flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary-fixed-dim opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-on-tertiary-container"></span>
+</span>
+</div>
+</div>
+</section>
+<!-- Dashboard Menu List -->
+<section class="space-y-3">
+<h3 class="text-[12px] font-bold text-outline uppercase tracking-[0.2em] mb-4 ml-2">General Settings</h3>
+<!-- My Profile -->
+<button class="w-full flex items-center justify-between p-4 bg-surface-container-low rounded-xl hover:bg-surface-container-high transition-colors group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">person</span>
+</div>
+<span class="font-semibold text-on-surface">My Profile</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-1 transition-transform">chevron_right</span>
+</button>
+<!-- Account Settings -->
+<button class="w-full flex items-center justify-between p-4 bg-surface-container-low rounded-xl hover:bg-surface-container-high transition-colors group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined">settings</span>
+</div>
+<span class="font-semibold text-on-surface">Account Settings</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-1 transition-transform">chevron_right</span>
+</button>
+<!-- Help & Support -->
+<button class="w-full flex items-center justify-between p-4 bg-surface-container-low rounded-xl hover:bg-surface-container-high transition-colors group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed">
+<span class="material-symbols-outlined">contact_support</span>
+</div>
+<span class="font-semibold text-on-surface">Help &amp; Support</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-1 transition-transform">chevron_right</span>
+</button>
+<!-- Logout -->
+<button class="w-full flex items-center justify-between p-4 bg-error-container/20 rounded-xl hover:bg-error-container/40 transition-colors group mt-6 border border-error/5">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-error-container flex items-center justify-center text-error">
+<span class="material-symbols-outlined">logout</span>
+</div>
+<span class="font-semibold text-error">Logout</span>
+</div>
+<span class="material-symbols-outlined text-error/40">power_settings_new</span>
+</button>
+</section>
+<!-- Aesthetic Promotional Card -->
+<section class="mt-12">
+<div class="relative w-full aspect-[21/9] rounded-2xl overflow-hidden shadow-lg">
+<img class="w-full h-full object-cover" data-alt="Modern luxury villa with pool at sunset, warm amber lighting reflecting on clear water with minimalist architecture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfBcagvc3VFiEFBwMwLoE4iLvIymXAhaKYI589aC8pVzYH63wPIC7CG7Pp2ahIlO-d2GMIJtmX9LhslF63Hn85g2jipvnqOuqEtnO0kl8fGWHiBffHQAwfDkcxdyC9bN-8F4Exa3YPkgBrkE5DkexuE3zZOx2_1s3iKaSmBjXnHs5S9PwjpAB1VK0AV7hx3MeammN_3WedYGSPbVJQ49hYIW_XAoYypn0iv1UFVq2XgY_rNrsdLGYXXMkXjRshy2C6bikfWX8HjA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent flex flex-col justify-end p-5">
+<span class="text-[10px] font-bold text-tertiary-fixed uppercase tracking-widest mb-1">Editor's Choice</span>
+<h4 class="text-white font-headline font-bold text-lg leading-tight">Explore the finest estates in Indore.</h4>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg docked full-width rounded-t-3xl border-t border-slate-100/10 shadow-[0_-8px_30px_rgb(0,0,0,0.04)]">
+<a href="homescreen.html" class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-[#1B3A6B] transition-all duration-300 ease-out">
+<span class="material-symbols-outlined">home</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-semibold uppercase tracking-widest mt-1">Home</span>
+</a>
+<a href="property.html" class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-[#1B3A6B] transition-all duration-300 ease-out">
+<span class="material-symbols-outlined">search</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-semibold uppercase tracking-widest mt-1">Search</span>
+</a>
+<div onclick="window.location.href='addproperty.html'" class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-[#1B3A6B] transition-all duration-300 ease-out cursor-pointer">
+<span class="material-symbols-outlined text-3xl">add_circle</span>
+</div>
+<a href="favorites.html" class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-[#1B3A6B] transition-all duration-300 ease-out">
+<span class="material-symbols-outlined">favorite</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-semibold uppercase tracking-widest mt-1">Saved</span>
+</a>
+<!-- ACTIVE DESTINATION: Admin/Dashboard -->
+<a href="admin.html" class="flex flex-col items-center justify-center text-[#006a63] dark:text-[#4db6ac] bg-[#ffddb8]/20 rounded-xl px-3 py-1 scale-110 transition-all duration-300 ease-out">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-semibold uppercase tracking-widest mt-1">Admin</span>
+</a>
+</nav>
+</body></html>

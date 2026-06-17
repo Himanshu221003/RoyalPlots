@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-tertiary-container": "#e59300",
+            "inverse-surface": "#2f3034",
+            "outline": "#747780",
+            "error-container": "#ffdad6",
+            "on-surface": "#1a1b1f",
+            "primary-fixed-dim": "#acc7ff",
+            "tertiary-container": "#553300",
+            "on-primary-container": "#89a5dd",
+            "surface": "#faf9fe",
+            "surface-container-low": "#f4f3f8",
+            "on-tertiary-fixed-variant": "#653e00",
+            "surface-container-lowest": "#ffffff",
+            "primary-fixed": "#d7e2ff",
+            "on-error": "#ffffff",
+            "tertiary-fixed-dim": "#ffb95f",
+            "on-secondary-fixed-variant": "#00504a",
+            "surface-bright": "#faf9fe",
+            "secondary": "#006a63",
+            "surface-container-highest": "#e3e2e7",
+            "secondary-fixed-dim": "#80d5cb",
+            "secondary-fixed": "#9cf2e8",
+            "tertiary": "#372000",
+            "surface-variant": "#e3e2e7",
+            "on-tertiary": "#ffffff",
+            "error": "#ba1a1a",
+            "on-error-container": "#93000a",
+            "secondary-container": "#99efe5",
+            "on-secondary-fixed": "#00201d",
+            "on-tertiary-fixed": "#2a1700",
+            "on-background": "#1a1b1f",
+            "inverse-primary": "#acc7ff",
+            "on-surface-variant": "#44474f",
+            "on-primary-fixed": "#001a40",
+            "outline-variant": "#c4c6d0",
+            "primary": "#002452",
+            "surface-dim": "#dad9de",
+            "on-secondary-container": "#006f67",
+            "surface-container": "#eeedf2",
+            "surface-tint": "#425e91",
+            "on-primary": "#ffffff",
+            "on-secondary": "#ffffff",
+            "surface-container-high": "#e9e7ec",
+            "inverse-on-surface": "#f1f0f5",
+            "on-primary-fixed-variant": "#294678",
+            "primary-container": "#1b3a6b",
+            "tertiary-fixed": "#ffddb8",
+            "background": "#faf9fe"
+          },
+          fontFamily: {
+            "headline": ["Manrope"],
+            "body": ["Plus Jakarta Sans"],
+            "label": ["Plus Jakarta Sans"]
+          },
+          borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    html, body {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+  <style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+
+<body class="bg-surface font-body text-on-surface min-h-screen pb-24">
+  <!-- TopAppBar -->
+  <header
+    class="fixed top-0 w-full flex justify-between items-center px-6 py-4 bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl docked full-width z-50 no-border bg-surface-container-low">
+    <div class="flex items-center gap-3">
+      <a href="userdashboard.html"
+        class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center overflow-hidden">
+        <img alt="User Profile"
+          data-alt="Professional headshot of a young male real estate consultant with a warm smile, clean studio background, high-end editorial lighting"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoDUF1nXNHKvTe0VUOzSxTaIdPLvnuIw07Dzk2N_RIo5C_mpHr1PHKcavEsU-eiM9aUVlkUNomsIDJLLUBKBurZbYcekRFpScFV21ukepWASR0W9cIelQnGuZM-GwYlMQN_NU6mVhMuQO3xollcu6sYUn_Rexx650yB4_VyAcW9SuNpR9hk9c9Jvjda3GCw9emv477-RwKn79u0atqMlTaLPNOdrr7qhtzhdd4PmUqRKzpdi6Qac8OtzA3Ocb97sSntWcpm6b14Q" />
+      </a>
+      <span class="font-headline font-extrabold text-[#002452] dark:text-white tracking-tighter text-lg">The Editorial
+        Estate</span>
+    </div>
+    <button
+      class="w-10 h-10 flex items-center justify-center rounded-full text-[#002452] dark:text-[#d7e2ff] hover:bg-slate-100/50 dark:hover:bg-slate-800/50 scale-95 active:scale-90 transition-transform">
+      <span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+    </button>
+  </header>
+  <main class="pt-20 px-6 space-y-10">
+    <!-- Hero Section -->
+    <section class="relative mt-4">
+      <div class="max-w-xs">
+        <h1 class="font-headline font-extrabold text-4xl text-primary leading-tight tracking-tight">
+          Find your dream home in Madhya Pradesh
+        </h1>
+        <p class="mt-4 text-on-surface-variant font-medium">Curated luxury and residential spaces across the heart of
+          India.</p>
+      </div>
+      <!-- Search Bar Plinth -->
+      <div class="mt-8 bg-surface-container-high rounded-full p-2 flex items-center shadow-none">
+        <div class="flex-1 flex items-center px-4 gap-3">
+          <span class="material-symbols-outlined text-secondary" data-icon="search">search</span>
+          <div class="flex flex-col">
+            <span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Location</span>
+            <select
+              class="bg-transparent border-none p-0 text-sm font-bold focus:ring-0 text-primary appearance-none pr-4">
+              <option>Indore, MP</option>
+              <option>Bhopal, MP</option>
+              <option>Gwalior, MP</option>
+            </select>
+          </div>
+        </div>
+        <div class="w-px h-8 bg-outline-variant/30"></div>
+        <div class="flex-1 flex items-center px-4 gap-3">
+          <div class="flex flex-col">
+            <span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Type</span>
+            <select
+              class="bg-transparent border-none p-0 text-sm font-bold focus:ring-0 text-primary appearance-none pr-4">
+              <option>Villa</option>
+              <option>Apartment</option>
+              <option>Plot</option>
+            </select>
+          </div>
+        </div>
+        <button
+          class="bg-primary text-on-primary p-3 rounded-full flex items-center justify-center scale-95 active:scale-90 transition-transform">
+          <span class="material-symbols-outlined" data-icon="tune">tune</span>
+        </button>
+      </div>
+    </section>
+    <!-- Browse by City -->
+    <section>
+      <div class="flex justify-between items-end mb-6">
+        <h2 class="font-headline font-bold text-xl text-primary">Browse by City</h2>
+        <a href="property.html" class="text-secondary font-bold text-sm">View All</a>
+      </div>
+      <div class="flex gap-4 overflow-x-auto pb-4 -mx-6 px-6">
+        <!-- Indore -->
+        <div class="flex-shrink-0 flex flex-col items-center gap-2 group">
+          <div
+            class="w-20 h-20 rounded-2xl bg-surface-container-lowest flex items-center justify-center border border-outline-variant/15 group-hover:bg-tertiary-fixed transition-colors">
+            <img alt="Indore" class="w-16 h-16 rounded-xl object-cover"
+              data-alt="Modern architectural silhouette of Rajwada Palace in Indore during sunset, golden tones, heritage vibe"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDATlTl2cxHwrpvnH_AVdeNQ68UHnhmCFpumrh6FUGl8uQUgSX0mbbjLm9ltADvIiUDg0FrFn6NAJUA47G4OR4eo7-1ZtPZEhi065DIeEbTh4t4Mpd86XhMkAan-zL1LPTxoKquNLBtn60Ye-EJpiNIiNR_NznGy8FncEkdeRihqa_xh0kB6OqLMo52bT6a9WWoLCoZPSoMLOxjUgXG66gUwvYJR9aq3RENuxsXgddtMVEnEnaVnnDj0YHUY5lFqxctBR9Jzzzb7A" />
+          </div>
+          <span class="text-xs font-bold text-primary">Indore</span>
+        </div>
+        <!-- Bhopal -->
+        <div class="flex-shrink-0 flex flex-col items-center gap-2 group">
+          <div
+            class="w-20 h-20 rounded-2xl bg-surface-container-lowest flex items-center justify-center border border-outline-variant/15 group-hover:bg-tertiary-fixed transition-colors">
+            <img alt="Bhopal" class="w-16 h-16 rounded-xl object-cover"
+              data-alt="Tranquil Upper Lake of Bhopal with boat silhouettes at dawn, misty blue and soft amber colors"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCa-Bm-0CtA_JFTsv9ClTP_nvNmNtGWXiCxoZCpi0f5jxPVD1rnCpLd_G5KASRWGTMZ-yv37-kfkEOODyOvBI0LqraziEqUmoq_3Y-q1sy_S1XG5pZBvjW5l0Gnlnr0EF7hVPIUa-wGzUtG7UeJrw2UlRA6S_H9DAAMD46xt5mzaOlfdKWROvDRSCaf6i1-4Cxp102kHiLlao0vE5o-aK7MRXIXY3dmFI23a9EG46gw6-BYLD5WhUa0Wvp7pxfqUO1tGUF0Svy66Q" />
+          </div>
+          <span class="text-xs font-bold text-primary">Bhopal</span>
+        </div>
+        <!-- Rewa -->
+        <div class="flex-shrink-0 flex flex-col items-center gap-2 group">
+          <div
+            class="w-20 h-20 rounded-2xl bg-surface-container-lowest flex items-center justify-center border border-outline-variant/15 group-hover:bg-tertiary-fixed transition-colors">
+            <img alt="Rewa" class="w-16 h-16 rounded-xl object-cover"
+              data-alt="Majestic white tigers in a sanctuary setting, lush green foliage, symbolic of Rewa's heritage"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFmYCXdYA1-hms2a5TqoecqOUgu9d0ABR8FjZ7s-mh7vemZ_FF_hu0npR50t69HS8LiVp3SM3Oo20tbAyXVjtudqi_EMNped_BWTJ2rrbUalGQVG0fD4pe_XHmfZIGcpJvGiW4aOqa0Fz0CELJgWgtjnsuK9XgAjW_OYruu1pPaEKzylfAIEi4v2bhbhMBppIp-4T-1w6ArQvrbcwnbsxNWu3YHcYtQZPVMLfcGQC_19Ol4T70rGr1Twti7dmRAAOj-YlAD2QBDw" />
+          </div>
+          <span class="text-xs font-bold text-primary">Rewa</span>
+        </div>
+        <!-- Jabalpur -->
+        <div class="flex-shrink-0 flex flex-col items-center gap-2 group">
+          <div
+            class="w-20 h-20 rounded-2xl bg-surface-container-lowest flex items-center justify-center border border-outline-variant/15 group-hover:bg-tertiary-fixed transition-colors">
+            <img alt="Jabalpur" class="w-16 h-16 rounded-xl object-cover"
+              data-alt="Dramatic marble rocks canyon of Bhedaghat in Jabalpur with turquoise Narmada river flowing between"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrX0D4P9MK1_j8mMQE2D7TKI84ju0jvJmIuM-VFjeaACvc4S8FG7fWgtBg88Tm6TYMS7w_amFFvH0GS2pzNJjBG_uBnQ-pyPMODOMfL7i4B0y7CRooi2l55_HmTArM8TzK5Sz7BsKv5inFzniF08O0B4MYMsIoqGwobZ8s2kHKTB1MfehP1XF8hNMImYXbpch5bu1mMOrO31CZRw2XuQ4N2s5XtCtqgIG6Elgzi3QR7jgcoKi5bFEmnhL8ThaWnsxN8FLgQZSdBg" />
+          </div>
+          <span class="text-xs font-bold text-primary">Jabalpur</span>
+        </div>
+        <!-- Ujjain -->
+        <div class="flex-shrink-0 flex flex-col items-center gap-2 group">
+          <div
+            class="w-20 h-20 rounded-2xl bg-surface-container-lowest flex items-center justify-center border border-outline-variant/15 group-hover:bg-tertiary-fixed transition-colors">
+            <img alt="Ujjain" class="w-16 h-16 rounded-xl object-cover"
+              data-alt="Spiritual atmosphere of Mahakaleshwar temple Ujjain, evening lamps glowing against ancient stone walls"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoDSq6mpR7lX5fTjG26KSEuQzAeeN5DS0iOnxHPUSyF5efWaq2ikr75wxYN1IrBgKwcjY4s22lRaAcGzWLHz8KvGomewietwQ4tNWNg9Per4zWL91B46ik9BmO34Hox-zi6536erOxWoV2HhEObx18bxJSCVZkBwmM1_a1sKqtn7R8tb8LqaVUOH2hOvZbyR5W6Lo-VaQdKBRfeKPkSTP0G_EUfbbbCVG9dGbWznwf9J_fIDh1mlOFtrO0CRS1zETusYtREK45JQ" />
+          </div>
+          <span class="text-xs font-bold text-primary">Ujjain</span>
+        </div>
+        <!-- Gwalior -->
+        <div class="flex-shrink-0 flex flex-col items-center gap-2 group">
+          <div
+            class="w-20 h-20 rounded-2xl bg-surface-container-lowest flex items-center justify-center border border-outline-variant/15 group-hover:bg-tertiary-fixed transition-colors">
+            <img alt="Gwalior" class="w-16 h-16 rounded-xl object-cover"
+              data-alt="Gwalior Fort sandstone walls bathed in afternoon sun, intricate carvings, deep blue sky background"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLHBK-GJt8wjdOAI-SUlYX3o8AdpEpEfxMxpT6Bd8RIdhr7ie4YR6EkOVtS8dRLW1C51rYj4MsE2a9A3KE98METtHmAknB-spUSB7HJKfX_XPUIH9ypfFMNmsZNhyNG1QGVXX6jTGtWJ_u7uTse7J_fS6kOEcAeK7gf7VHfgogYEYFjke2p7O6pFfJ5C7UIbSZqn9Dqb3ezHSSOReZJWwBo8JqyIoKRrOkP0c1s31ACeQX3xp-Sv3CdBC3RuUVu28Zq04mbt4nGQ" />
+          </div>
+          <span class="text-xs font-bold text-primary">Gwalior</span>
+        </div>
+      </div>
+    </section>
+    <!-- Featured Properties -->
+    <section>
+      <div class="flex justify-between items-end mb-6">
+        <h2 class="font-headline font-bold text-xl text-primary">Featured Properties</h2>
+        <span class="text-secondary font-bold text-sm">View Map</span>
+      </div>
+      <div class="flex gap-6 overflow-x-auto pb-8 -mx-6 px-6">
+        <!-- Card 1 -->
+        <a href="propertyprofile.html" class="flex-shrink-0 w-72 block">
+          <div class="relative">
+            <img alt="Property 1" class="w-full h-48 object-cover rounded-xl"
+              data-alt="Ultra-modern luxury villa in Indore with glass walls, infinity pool, and lush manicured lawns at twilight"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoBpSb0sUy6_hzTq46j7qbKPP5bZ2cDrsvNbkm8cXSKsvHXSXO-JGGOTKVfJRuOlimmIc2gI1uuauYaSzFhwYmH641ZV2LPU8o6D8P2DnXDdPLbMkg-DANYGcFadyKOvDZzKQ1bh12VV6gQWBaopwkW1EjkFKZT9bPmdTdTZe85lVdubDQvcYS-wqNKZplk0VTQMNS62NZXJFpT-gvoQjUyKhLymwEEpS_UO-5nsYwNGQ5pZPCU6nHsGpx4_Hk78Qwh9gs373Jmw" />
+            <div class="absolute top-4 left-4 bg-surface-container-lowest/90 backdrop-blur-sm px-3 py-1.5 rounded-full">
+              <span class="text-secondary font-headline font-bold text-sm">₹ 2.4 Crore</span>
+            </div>
+            <button
+              class="absolute top-4 right-4 w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white">
+              <span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+            </button>
+          </div>
+          <div class="mt-4 px-2">
+            <h3
+              class="font-headline font-bold text-lg text-primary truncate -mt-8 relative bg-surface-container-lowest p-2 rounded-lg shadow-sm border border-outline-variant/10">
+              The Sapphire Manor</h3>
+            <div class="flex items-center gap-4 mt-3 text-on-surface-variant text-sm font-semibold">
+              <div class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-[18px]" data-icon="bed">bed</span>
+                3BHK
+              </div>
+              <div class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-[18px]" data-icon="location_on">location_on</span>
+                Vijay Nagar, Indore
+              </div>
+            </div>
+          </div>
+        </a>
+        <!-- Card 2 -->
+        <div class="flex-shrink-0 w-72">
+          <div class="relative">
+            <img alt="Property 2" class="w-full h-48 object-cover rounded-xl"
+              data-alt="Contemporary apartment complex in Bhopal with rooftop gardens, clean lines, sunset sky background"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDolMdyhbDtLtKml9OoDByO3ZAwQCbi0nGCoM4jsE1aRah9jR6Zl-hvyrMbGZHDY8_Gs18Al69P8bhqXfhnogpsvJ3cArIFtEaJwggf_X_A1iSBSa0O6hVn_WbP3vaTccazEQekhMRPcPUhluiyXzjH1IY9M_kpV4sY-hsR5uGEq-g_o1SR3iIY8KAUhE-XcqoXoL6ghrKYTsaViuQ4hZf2EGZqed3KDZdebF0Vk6aoIYgcs7vRfMtnB-1W6pxIwvaqX8QCLrywsQ" />
+            <div class="absolute top-4 left-4 bg-surface-container-lowest/90 backdrop-blur-sm px-3 py-1.5 rounded-full">
+              <span class="text-secondary font-headline font-bold text-sm">₹ 85 Lakh</span>
+            </div>
+            <button
+              class="absolute top-4 right-4 w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white">
+              <span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+            </button>
+          </div>
+          <div class="mt-4 px-2">
+            <h3
+              class="font-headline font-bold text-lg text-primary truncate -mt-8 relative bg-surface-container-lowest p-2 rounded-lg shadow-sm border border-outline-variant/10">
+              Lakeview Residency</h3>
+            <div class="flex items-center gap-4 mt-3 text-on-surface-variant text-sm font-semibold">
+              <div class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-[18px]" data-icon="bed">bed</span>
+                2BHK
+              </div>
+              <div class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-[18px]" data-icon="location_on">location_on</span>
+                Arera Colony, Bhopal
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="flex-shrink-0 w-72">
+          <div class="relative">
+            <img alt="Property 3" class="w-full h-48 object-cover rounded-xl"
+              data-alt="Spacious colonial style bungalow in Gwalior with white pillars and wide porch, morning sunlight"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5xW0KhegYfJ8JWMG9Josgz1Pr98fCxuDxqK-DqBKzrnmHlO04-7tFcDjaRVMKQVVliajpjp6kjD5Tbr9Bo-fbgwSAycN4hN7P1nfKLLbWIw2CLe8xYKGfhdA76D4PbShirBzyzgCs8LDx7DBCSkOX0Kmxk4UweUgNmcbrhjvGz8fRE0YBIjy9thveJAuDtCy0v4U87QQefQq7mjak00V1p4WtTu_-OvMP2AICw0WaLsZiAIqXWA6wG5Izgm5h7pZJSKZ_NF11QA" />
+            <div class="absolute top-4 left-4 bg-surface-container-lowest/90 backdrop-blur-sm px-3 py-1.5 rounded-full">
+              <span class="text-secondary font-headline font-bold text-sm">₹ 1.2 Crore</span>
+            </div>
+            <button
+              class="absolute top-4 right-4 w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white">
+              <span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+            </button>
+          </div>
+          <div class="mt-4 px-2">
+            <h3
+              class="font-headline font-bold text-lg text-primary truncate -mt-8 relative bg-surface-container-lowest p-2 rounded-lg shadow-sm border border-outline-variant/10">
+              Heritage Greens</h3>
+            <div class="flex items-center gap-4 mt-3 text-on-surface-variant text-sm font-semibold">
+              <div class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-[18px]" data-icon="bed">bed</span>
+                4BHK
+              </div>
+              <div class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-[18px]" data-icon="location_on">location_on</span>
+                City Center, Gwalior
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- New Launch Banner (Bento Style) -->
+    <section class="bg-primary-container rounded-3xl p-6 relative overflow-hidden">
+      <div class="relative z-10 max-w-[60%]">
+        <span
+          class="bg-tertiary-fixed text-on-tertiary-fixed text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-widest">New
+          Launch</span>
+        <h2 class="text-white font-headline font-extrabold text-2xl mt-4">The Oasis Heights</h2>
+        <p class="text-primary-fixed text-sm mt-2">Smart living starts at just ₹45 Lakh in the heart of Rewa.</p>
+        <button
+          class="mt-6 bg-surface-container-lowest text-primary px-6 py-2.5 rounded-full text-sm font-bold scale-95 active:scale-90 transition-transform">Explore
+          Now</button>
+      </div>
+      <div class="absolute top-0 right-0 w-1/2 h-full opacity-40">
+        <img alt="Commercial Property" class="w-full h-full object-cover"
+          data-alt="Abstract architectural shot of a modern glass skyscraper reflecting the blue sky, premium commercial aesthetic"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNITXUwz78R6vMwCHko81C_HFFuFGSjDvuapXUtRckvVRWXOfZQC-0NhkQMLg-0GRScsufPYbWG5MuvcEZYqJkMEBhVuA5m9xdU3eLSa2Qi6lhYrwh1l31zZ5NTT-VBt2hfbU9u4ESz7UK9h8Qtn4AJnk1HQm47MwLRmPE0a3pD1fWOF5ApdEopBKfoMfX9OrMFfB1UXfB_fzPN3fQkVLlBAt396MICi6JSkDtdRvNkM3QfQ9F1po_gWg5HapztxrDDCdHvhQQSg" />
+      </div>
+    </section>
+  </main>
+  <!-- BottomNavBar -->
+  <nav
+    class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg docked full-width rounded-t-3xl border-t border-slate-100/10 shadow-[0_-8px_30px_rgb(0,0,0,0.04)] tonal-shift">
+    <a class="flex flex-col items-center justify-center text-[#006a63] dark:text-[#4db6ac] bg-[#ffddb8]/20 rounded-xl px-3 py-1 scale-110 transition-all duration-300 ease-out"
+      href="homescreen.html">
+      <span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+      <span class="font-['Plus_Jakarta_Sans'] text-[10px] font-semibold uppercase tracking-widest mt-1">Home</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-[#1B3A6B] dark:hover:text-white transition-colors"
+      href="property.html">
+      <span class="material-symbols-outlined" data-icon="search">search</span>
+      <span class="font-['Plus_Jakarta_Sans'] text-[10px] font-semibold uppercase tracking-widest mt-1">Search</span>
+    </a>
+    <div class="relative -top-8">
+      <button onclick="window.location.href='addproperty.html'"
+        class="bg-secondary text-on-secondary p-4 rounded-full shadow-lg scale-110 active:scale-95 transition-transform">
+        <span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+      </button>
+    </div>
+    <a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-[#1B3A6B] dark:hover:text-white transition-colors"
+      href="favorites.html">
+      <span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+      <span class="font-['Plus_Jakarta_Sans'] text-[10px] font-semibold uppercase tracking-widest mt-1">Saved</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-[#1B3A6B] dark:hover:text-white transition-colors"
+      href="admin.html">
+      <span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+      <span class="font-['Plus_Jakarta_Sans'] text-[10px] font-semibold uppercase tracking-widest mt-1">Admin</span>
+    </a>
+  </nav>
+</body>
+
+</html>

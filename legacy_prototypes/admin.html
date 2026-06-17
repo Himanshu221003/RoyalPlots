@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>OPMS Admin Dashboard | The Editorial Estate</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-container": "#e59300",
+              "inverse-surface": "#2f3034",
+              "outline": "#747780",
+              "error-container": "#ffdad6",
+              "on-surface": "#1a1b1f",
+              "primary-fixed-dim": "#acc7ff",
+              "tertiary-container": "#553300",
+              "on-primary-container": "#89a5dd",
+              "surface": "#faf9fe",
+              "surface-container-low": "#f4f3f8",
+              "on-tertiary-fixed-variant": "#653e00",
+              "surface-container-lowest": "#ffffff",
+              "primary-fixed": "#d7e2ff",
+              "on-error": "#ffffff",
+              "tertiary-fixed-dim": "#ffb95f",
+              "on-secondary-fixed-variant": "#00504a",
+              "surface-bright": "#faf9fe",
+              "secondary": "#006a63",
+              "surface-container-highest": "#e3e2e7",
+              "secondary-fixed-dim": "#80d5cb",
+              "secondary-fixed": "#9cf2e8",
+              "tertiary": "#372000",
+              "surface-variant": "#e3e2e7",
+              "on-tertiary": "#ffffff",
+              "error": "#ba1a1a",
+              "on-error-container": "#93000a",
+              "secondary-container": "#99efe5",
+              "on-secondary-fixed": "#00201d",
+              "on-tertiary-fixed": "#2a1700",
+              "on-background": "#1a1b1f",
+              "inverse-primary": "#acc7ff",
+              "on-surface-variant": "#44474f",
+              "on-primary-fixed": "#001a40",
+              "outline-variant": "#c4c6d0",
+              "primary": "#002452",
+              "surface-dim": "#dad9de",
+              "on-secondary-container": "#006f67",
+              "surface-container": "#eeedf2",
+              "surface-tint": "#425e91",
+              "on-primary": "#ffffff",
+              "on-secondary": "#ffffff",
+              "surface-container-high": "#e9e7ec",
+              "inverse-on-surface": "#f1f0f5",
+              "on-primary-fixed-variant": "#294678",
+              "primary-container": "#1b3a6b",
+              "tertiary-fixed": "#ffddb8",
+              "background": "#faf9fe"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3 {
+            font-family: 'Manrope', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full flex justify-between items-center px-6 py-4 bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl z-50 shadow-none">
+<div class="flex items-center gap-3">
+<a href="userdashboard.html" class="w-10 h-10 rounded-full bg-primary-container overflow-hidden ring-2 ring-primary-fixed">
+<img alt="Admin Profile" data-alt="professional portrait of a senior real estate executive in a dark suit with a confident expression and soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBFbCzsy0SPzlwP9yxeAuciRw_ryk8pDjHRLKfv7a8BXRnd3I1eHbxbp3r6nZoX-uu67ZrEujkW9OsDScSu22mTkfd-wzEs7q34nO5wF1eUEMqdAv4pmcks-RpzTT8o5ulPHr_gazG6aaaHvC0Zj6NIwCVLJooPr2mS8N6EKmbd8qAeAOt_FtNhD58cRhuX5DSikGhZXfd9wdTJbqAYNylcCQalsdCl3NSm4NLj7YdLXUANU8qHeQDqCRP8Gb7a7gi0FRST7cyog"/>
+</a>
+<span class="font-['Manrope'] font-extrabold text-[#002452] dark:text-white tracking-tighter text-lg">The Editorial Estate</span>
+</div>
+<button class="text-slate-500 hover:bg-slate-100/50 p-2 rounded-full transition-transform active:scale-90">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</header>
+<main class="pt-24 px-6 space-y-10">
+<!-- Header Section -->
+<section>
+<h1 class="text-3xl font-extrabold text-primary tracking-tight">Admin Dashboard</h1>
+<p class="text-on-surface-variant text-sm mt-1">Property Management Overview</p>
+</section>
+<!-- Top Metrics: Bento Grid Layout -->
+<section class="grid grid-cols-2 gap-4">
+<div class="col-span-2 bg-primary-container p-6 rounded-xl text-white relative overflow-hidden">
+<div class="relative z-10">
+<p class="text-primary-fixed text-xs font-semibold uppercase tracking-widest mb-1">Total Users</p>
+<h2 class="text-4xl font-bold tracking-tighter">1,200</h2>
+<div class="mt-4 flex items-center gap-2">
+<span class="bg-secondary px-2 py-0.5 rounded-full text-[10px] font-bold">+12% this month</span>
+</div>
+</div>
+<span class="material-symbols-outlined absolute -right-4 -bottom-4 text-white/10 text-9xl" data-icon="group">group</span>
+</div>
+<div class="bg-surface-container-low p-5 rounded-xl flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-secondary mb-2" data-icon="real_estate_agent">real_estate_agent</span>
+<p class="text-on-surface-variant text-xs font-semibold uppercase tracking-widest">Active</p>
+</div>
+<h3 class="text-2xl font-bold text-primary">450</h3>
+</div>
+<div class="bg-tertiary-fixed p-5 rounded-xl flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-tertiary mb-2" data-icon="pending_actions">pending_actions</span>
+<p class="text-on-tertiary-fixed-variant text-xs font-semibold uppercase tracking-widest">Pending</p>
+</div>
+<h3 class="text-2xl font-bold text-tertiary">12</h3>
+</div>
+</section>
+<!-- Quick Actions -->
+<section class="bg-surface-container-high p-4 rounded-xl flex justify-between items-center">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="manage_accounts">manage_accounts</span>
+<span class="font-bold text-primary">User Management</span>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="arrow_forward_ios">arrow_forward_ios</span>
+</section>
+<!-- Pending Review Queue -->
+<section class="space-y-6">
+<div class="flex justify-between items-end">
+<h2 class="text-xl font-bold text-primary">Pending Review</h2>
+<span class="text-secondary text-sm font-bold">See All</span>
+</div>
+<!-- Property Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm">
+<div class="relative h-40">
+<img alt="Property Image" class="w-full h-full object-cover" data-alt="luxury modern villa in Bhopal with clean white architecture, large glass windows, and a manicured lawn at sunrise" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChzKVip3BSfoNFHTEGa7dp_msHBGb7XWYSEuMmXODQWWm1hvpqeLRF4sO2nNDniqszttNKgYu9qhjH8AnF62-Qhuz7bhjiP95dBarYBs_IqcV2eWlzpEtVL2VLZqei_3BRRETY-we79hzXyl_6urTBJ9bkJK6A1EF5CGv1qqjumnv6C859iToHOSmaIO74pNtNiy5lza0IfI6kacoET7B8IrKdbg18SUfBJpAqSEsyRG-l-X5Qgb6obgUZT-xtYbNlvLBNL6o8_Q"/>
+<div class="absolute top-3 left-3 bg-tertiary-fixed px-3 py-1 rounded-full text-[10px] font-bold text-tertiary uppercase tracking-wider">New Submission</div>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-lg font-bold text-primary leading-tight">Shyamala Hills Heritage Suite</h3>
+<span class="text-secondary font-bold text-lg">₹1.2 Cr</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-6 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span> Bhopal, Madhya Pradesh
+                    </p>
+<div class="grid grid-cols-2 gap-3">
+<button class="flex items-center justify-center gap-2 bg-secondary text-white py-3 rounded-lg font-bold text-sm transition-transform active:scale-95">
+<span class="material-symbols-outlined text-sm" data-icon="check_circle">check_circle</span> Approve
+                        </button>
+<button class="flex items-center justify-center gap-2 bg-error-container text-on-error-container py-3 rounded-lg font-bold text-sm transition-transform active:scale-95">
+<span class="material-symbols-outlined text-sm" data-icon="cancel">cancel</span> Reject
+                        </button>
+</div>
+</div>
+</div>
+<!-- Property Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm">
+<div class="relative h-40">
+<img alt="Property Image" class="w-full h-full object-cover" data-alt="elegant upscale apartment complex in Indore with contemporary stone facades and lush balcony gardens during golden hour" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUlpDBWCUPcR1HJmRXv2bSm82Vlc1EPRDhUgfbcAlmkBr6JTj7ZFFFeDA4mAyf6IvZZ_EZMSM1SI_jczyy7y8X_aXIvPxbpXBidrCD-QsTMbQJ1lUi4K8R751kGelJLF6ErJEyW7m-QroidOhKHhvj3X2DqBly3MBajaVzBxvqPS3zQtGCu3pr9X02Qpnfq6TqwUiTiy7RUgEak3d0KFc2p5iG8YYVgoRWHugIkqAGaEyCAUZOG2DKY7LNt1Y4VVzVl8J5K-IeRg"/>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-lg font-bold text-primary leading-tight">Indore Premium Sky-Residences</h3>
+<span class="text-secondary font-bold text-lg">₹85.5 L</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-6 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span> Vijay Nagar, Indore
+                    </p>
+<div class="grid grid-cols-2 gap-3">
+<button class="flex items-center justify-center gap-2 bg-secondary text-white py-3 rounded-lg font-bold text-sm transition-transform active:scale-95">
+<span class="material-symbols-outlined text-sm" data-icon="check_circle">check_circle</span> Approve
+                        </button>
+<button class="flex items-center justify-center gap-2 bg-error-container text-on-error-container py-3 rounded-lg font-bold text-sm transition-transform active:scale-95">
+<span class="material-symbols-outlined text-sm" data-icon="cancel">cancel</span> Reject
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Recent Activity Feed -->
+<section class="space-y-6 pb-12">
+<h2 class="text-xl font-bold text-primary">Recent Activity</h2>
+<div class="space-y-4">
+<div class="flex items-start gap-4 p-3 rounded-xl bg-surface-container-low">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="person_add">person_add</span>
+</div>
+<div>
+<p class="text-sm font-semibold text-on-surface">New Agent Registered</p>
+<p class="text-xs text-on-surface-variant">Arjun Sharma from Jabalpur joined the platform.</p>
+<p class="text-[10px] text-outline mt-1 uppercase font-bold tracking-tighter">2 mins ago</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-3 rounded-xl bg-surface-container-low">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-on-tertiary-fixed-variant" data-icon="update">update</span>
+</div>
+<div>
+<p class="text-sm font-semibold text-on-surface">Listing Updated</p>
+<p class="text-xs text-on-surface-variant">Price changed for 'Orchard Estate, Gwalior'.</p>
+<p class="text-[10px] text-outline mt-1 uppercase font-bold tracking-tighter">45 mins ago</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg rounded-t-3xl border-t border-slate-100/10 shadow-[0_-8px_30px_rgb(0,0,0,0.04)]">
+<!-- Admin Home (Active) -->
+<a class="flex flex-col items-center justify-center text-[#006a63] dark:text-[#4db6ac] bg-[#ffddb8]/20 rounded-xl px-3 py-1 scale-110 transition-all duration-300 ease-out" href="homescreen.html">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-semibold uppercase tracking-widest mt-1">Home</span>
+</a>
+<!-- Mod Queue -->
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-[#1B3A6B] transition-all" href="inquiry.html">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-semibold uppercase tracking-widest mt-1">Inbox</span>
+</a>
+<!-- Add (Contextual Center Action) -->
+<div onclick="window.location.href='addproperty.html'" class="bg-primary p-3 rounded-full -mt-8 shadow-lg shadow-primary/30 active:scale-90 transition-transform cursor-pointer">
+<span class="material-symbols-outlined text-white text-3xl" data-icon="add">add</span>
+</div>
+<!-- User Search -->
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-[#1B3A6B] transition-all" href="favorites.html">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-semibold uppercase tracking-widest mt-1">Saved</span>
+</a>
+<!-- ACTIVE: Admin -->
+<a class="flex flex-col items-center justify-center text-[#006a63] dark:text-[#4db6ac] bg-[#ffddb8]/20 rounded-xl px-3 py-1 scale-110 transition-all duration-300 ease-out" href="admin.html">
+<span class="material-symbols-outlined" data-icon="dashboard" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-semibold uppercase tracking-widest mt-1">Admin</span>
+</a>
+</nav>
+</body></html>

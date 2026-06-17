@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Property Details - The Editorial Estate</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#002452",
+                        "secondary": "#006a63",
+                        "surface": "#faf9fe",
+                        "on-surface": "#1a1b1f",
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        ::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface min-h-screen pb-24">
+    <!-- Overlay Header -->
+    <header class="fixed top-0 w-full flex justify-between items-center px-6 py-4 z-50">
+        <button onclick="history.back()" class="w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white shadow-xl">
+            <span class="material-symbols-outlined">arrow_back</span>
+        </button>
+        <button class="w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white shadow-xl">
+            <span class="material-symbols-outlined">favorite</span>
+        </button>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Image Hero -->
+        <section class="h-[45vh] relative overflow-hidden">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoBpSb0sUy6_hzTq46j7qbKPP5bZ2cDrsvNbkm8cXSKsvHXSXO-JGGOTKVfJRuOlimmIc2gI1uuauYaSzFhwYmH641ZV2LPU8o6D8P2DnXDdPLbMkg-DANYGcFadyKOvDZzKQ1bh12VV6gQWBaopwkW1EjkFKZT9bPmdTdTZe85lVdubDQvcYS-wqNKZplk0VTQMNS62NZXJFpT-gvoQjUyKhLymwEEpS_UO-5nsYwNGQ5pZPCU6nHsGpx4_Hk78Qwh9gs373Jmw" 
+                 class="w-full h-full object-cover" alt="Property Image" />
+            <div class="absolute bottom-6 right-6 bg-primary/80 backdrop-blur-md px-4 py-2 rounded-xl border border-white/20">
+                <span class="text-white font-headline font-bold text-sm">1 / 12 Photos</span>
+            </div>
+        </section>
+
+        <!-- Information Card -->
+        <section class="relative -mt-10 bg-white rounded-t-[3rem] px-8 pt-10 space-y-8 shadow-[0_-20px_40px_rgba(0,0,0,0.05)]">
+            <!-- Header Info -->
+            <div>
+                <div class="flex justify-between items-start mb-4">
+                    <h1 class="font-headline font-extrabold text-3xl text-primary tracking-tight leading-tight">The Sapphire Manor</h1>
+                    <span class="bg-secondary/10 text-secondary text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">Active</span>
+                </div>
+                <div class="flex items-center gap-2 text-on-surface-variant font-medium">
+                    <span class="material-symbols-outlined text-secondary text-lg">location_on</span>
+                    <span>Vijay Nagar, Indore, Madhya Pradesh</span>
+                </div>
+                <div class="flex items-center gap-6 mt-8 p-4 bg-surface rounded-2xl border border-outline-variant/10">
+                    <div class="flex flex-col items-center gap-1 flex-1">
+                        <span class="material-symbols-outlined text-secondary">bed</span>
+                        <span class="text-xs font-bold uppercase tracking-widest text-outline">3 BHK</span>
+                    </div>
+                    <div class="w-px h-8 bg-outline/10"></div>
+                    <div class="flex flex-col items-center gap-1 flex-1">
+                        <span class="material-symbols-outlined text-secondary">bathtub</span>
+                        <span class="text-xs font-bold uppercase tracking-widest text-outline">3 Bath</span>
+                    </div>
+                    <div class="w-px h-8 bg-outline/10"></div>
+                    <div class="flex flex-col items-center gap-1 flex-1">
+                        <span class="material-symbols-outlined text-secondary">square_foot</span>
+                        <span class="text-xs font-bold uppercase tracking-widest text-outline">2400 ft²</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Description -->
+            <div class="space-y-4">
+                <h2 class="font-headline font-bold text-xl text-primary">About this Property</h2>
+                <p class="text-on-surface-variant leading-relaxed text-sm">
+                    Exquisite 3BHK luxury villa nestled in the most sought-after neighborhood of Indore. This editorial-grade estate features high ceilings, floor-to-ceiling glass pavilions, and a private landscaped garden. 
+                </p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="flex items-center gap-3 p-3 bg-surface rounded-xl border border-outline/5">
+                        <span class="material-symbols-outlined text-secondary">local_parking</span>
+                        <span class="text-xs font-bold">2 Car Parking</span>
+                    </div>
+                    <div class="flex items-center gap-3 p-3 bg-surface rounded-xl border border-outline/5">
+                        <span class="material-symbols-outlined text-secondary">pool</span>
+                        <span class="text-xs font-bold">Swimming Pool</span>
+                    </div>
+                    <div class="flex items-center gap-3 p-3 bg-surface rounded-xl border border-outline/5">
+                        <span class="material-symbols-outlined text-secondary">security</span>
+                        <span class="text-xs font-bold">24/7 Security</span>
+                    </div>
+                    <div class="flex items-center gap-3 p-3 bg-surface rounded-xl border border-outline/5">
+                        <span class="material-symbols-outlined text-secondary">power</span>
+                        <span class="text-xs font-bold">Full Backup</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seller Info -->
+            <div class="p-6 bg-primary-container/10 rounded-[2.5rem] flex items-center justify-between border border-primary/5">
+                <div class="flex items-center gap-4">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoDUF1nXNHKvTe0VUOzSxTaIdPLvnuIw07Dzk2N_RIo5C_mpHr1PHKcavEsU-eiM9aUVlkUNomsIDJLLUBKBurZbYcekRFpScFV21ukepWASR0W9cIelQnGuZM-GwYlMQN_NU6mVhMuQO3xollcu6sYUn_Rexx650yB4_VyAcW9SuNpR9hk9c9Jvjda3GCw9emv477-RwKn79u0atqMlTaLPNOdrr7qhtzhdd4PmUqRKzpdi6Qac8OtzA3Ocb97sSntWcpm6b14Q" 
+                         class="w-14 h-14 rounded-full object-cover ring-4 ring-white" alt="Owner" />
+                    <div>
+                        <h4 class="font-bold text-primary">Anand Verma</h4>
+                        <p class="text-[10px] uppercase font-bold text-secondary tracking-widest">Premium Seller</p>
+                    </div>
+                </div>
+                <button class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary shadow-lg scale-95 active:scale-90 transition-transform">
+                    <span class="material-symbols-outlined">call</span>
+                </button>
+            </div>
+            
+            <div class="pb-10 h-10"></div>
+        </section>
+    </main>
+
+    <!-- Sticky Bottom Action Bar -->
+    <div class="fixed bottom-0 w-full p-6 bg-white/80 backdrop-blur-xl border-t border-outline/5 flex items-center gap-4 z-50">
+        <div class="flex flex-col">
+            <span class="text-[10px] font-bold text-outline-variant uppercase tracking-widest">Total Price</span>
+            <span class="font-headline font-extrabold text-2xl text-secondary">₹ 2.4 Cr</span>
+        </div>
+        <button onclick="window.location.href='inquiry.html'" class="flex-1 py-4 bg-primary text-white rounded-2xl font-bold shadow-xl active:scale-95 transition-transform flex items-center justify-center gap-2">
+            Inquire Now
+            <span class="material-symbols-outlined text-sm">send</span>
+        </button>
+    </div>
+</body>
+</html>
